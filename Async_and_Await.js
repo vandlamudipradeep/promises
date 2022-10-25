@@ -142,22 +142,23 @@ getPosts();
 
 init();
 
-async function deletepostss(){
-let deletePosts =  new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-        if(posts.length > 0 ){
-            let de = posts.pop(); 
-            resolve(de);
-        }else{
-            reject("myArray is empty");
-            
-        }
-        },1000) 
-})
-
-getPosts();
+ function del(){
+    const deletePost  = new Promise((resolve , reject)=>{
+        setTimeout(()=>{
+            if(posts.length >  0){
+                let delete1 = posts.pop();
+            resolve(delete1);
+            }else{
+                reject("Array is Empty");
+            }
+        }, 1000);
+    })
 }
-deletepostss();
+async function display(){
+await del();
+await del();
+await del();
 
 
-
+}
+display();
